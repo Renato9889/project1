@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/wiki/encyclopedia/static/encyclopedia/styles.css">
+</head>
+
+{% block body %}
+    <div class="dive">
+        <form method="post">
+            {% csrf_token %}
+            <input class="search" type="text" name="title" placeholder="Title">
+            <textarea class="search" type="text" name="text" placeholder="Text"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}
