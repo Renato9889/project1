@@ -1,17 +1,45 @@
 {% extends "encyclopedia/layout.html" %}
-
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="/wiki/encyclopedia/static/encyclopedia/styles.css">
 </head>
 
 {% block body %}
-    <div class="dive">
-        <form method="post">
-            {% csrf_token %}
-            <input class="search" type="text" name="title" placeholder="Title">
-            <textarea class="search" type="text" name="text" placeholder="Text"></textarea>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+    <form method="post">
+        {% csrf_token %}
+        <input style="width: 300px;display: block;" type="text" name="title" placeholder="Title">
+        <div style="color: red; display: block; margin-bottom: 10px;">
+            {% if error_input %}
+                <div id="error-div" style="position: fixed; top: 10px; right: 10px; width: 300px; height: 50px; background-color: #d88380; border: 1px solid #e61607; padding: 10px; z-index: 9999; text-align: center; color:black">
+                    <p>{{ error_input }}</p>
+                </div>
+                <script>
+                    function hideErrorDiv() {
+                        var errorDiv = document.getElementById("error-div");
+                        if (errorDiv) {
+                            errorDiv.style.display = "none";
+                        }
+                    }
+                    setTimeout(hideErrorDiv, 5000);
+                </script>
+            {% endif %}
+        </div>
+        <textarea style="width: 800px; height: 600px; display: block; margin-bottom: 10px;" type="text" name="text" placeholder="Content"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+    {% if messages %}
+        {% for message in messages %}
+            <div id="message" style="position: fixed; top: 10px; right: 10px; width: 300px; height: 50px; background-color: #b6e9b6; border: 1px solid #02771f; padding: 10px; z-index: 9999; text-align: center;">
+                <p>{{ message }}</p>
+            </div>
+            <script>
+                function hideMessageDiv() {
+                    var messageDiv = document.getElementById("message");
+                    if (messageDiv) {
+                        messageDiv.style.display = "none";
+                    }
+                }
+                setTimeout(hideMessageDiv, 5000);
+            </script>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
