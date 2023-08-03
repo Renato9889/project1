@@ -21,10 +21,12 @@ def search(request, title=""):
     
     entries = util.list_entries()
 
-    search_title = title in entries
+    title2 = title[0].upper() + title[1:]
+
+    search_title = title2 in entries
     
-    if not search_title or search_title is None:
-        return redirect(not_found)
+    if not search_title:
+        return redirect("search_substring", title=title)
 
     
     result_search = markdown.markdown(util.get_entry(title))
@@ -41,6 +43,18 @@ def search_title(request, title):
         return redirect('index')
     return redirect('search', title = title)
     
+def search_substring(request, title=""):
+    substring = title
+    list_entries = util.list_entries()
+    substring_lower = substring.lower()
+    list_entries = list(filter(lambda x: substring_lower in x.lower(), list_entries))
+    if not list_entries:
+        return redirect(not_found)
+    ordem_list = sorted(list_entries)
+    return render(request, 'encyclopedia/search_substring.html', {
+                "title": substring,
+                'entries': ordem_list
+        })
 
 
 def not_found(request):
@@ -54,10 +68,10 @@ def not_found(request):
 def create_newpage(request):
     list_title = util.list_entries()
     title = request.POST.get('title',"")
+    text = request.POST.get('text',"")
     result = title in list_title
-    if request.method == 'POST' and result == False and title != "":
-        title = request.POST.get('title',"")
-        text = request.POST.get('text',"")
+    if request.method == 'POST' and text != "" and result == False and title != "":
+        title = title[0].upper() + title[1:]
         messages.success(request, 'New page successfully created!')
         return render(request, 'encyclopedia/create_newpage.html', {
             'create_newpage': util.save_entry(title,text)
@@ -66,6 +80,10 @@ def create_newpage(request):
         if result == True:
             error = "Error, invalid title!"
             return render(request, 'encyclopedia/create_newpage.html', {'error_input': error})
+        else:
+            if 'submit' in request.POST and (text == "" or title == ""):
+                error = "Error, one of the entries is empty!"
+                return render(request, 'encyclopedia/create_newpage.html', {'error_input': error})
   
     return render(request,'encyclopedia/create_newpage.html')
 

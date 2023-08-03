@@ -29,7 +29,7 @@
             color: black;
         }
     </style>
-    <h1>All Pages</h1>
+    <h1>search..."{{title}}"</h1>
     <div>
         {% for entry in entries %}
         <form style="display: inline;" action="{% url 'search' entry %}" method="post">

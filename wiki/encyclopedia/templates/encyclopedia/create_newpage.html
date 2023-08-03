@@ -4,9 +4,22 @@
 </head>
 
 {% block body %}
+    <style>
+        .button_submit{
+            background-color: #AB8686;
+            margin: 2px 2px;
+            width: 80px;
+        }
+        .button_submit:active{
+            background-color: rgb(158, 167, 207);
+        }
+        ::placeholder {
+            color: black;
+        }
+    </style>
     <form method="post">
         {% csrf_token %}
-        <input style="width: 300px;display: block;" type="text" name="title" placeholder="Title">
+        <input style="width: 300px;display: block; background-color: #eaf1f7; color: black;" type="text" name="title" placeholder="Title">
         <div style="color: red; display: block; margin-bottom: 10px;">
             {% if error_input %}
                 <div id="error-div" style="position: fixed; top: 10px; right: 10px; width: 300px; height: 50px; background-color: #d88380; border: 1px solid #e61607; padding: 10px; z-index: 9999; text-align: center; color:black">
@@ -23,8 +36,8 @@
                 </script>
             {% endif %}
         </div>
-        <textarea style="width: 800px; height: 600px; display: block; margin-bottom: 10px;" type="text" name="text" placeholder="Content"></textarea>
-        <input type="submit" value="Submit">
+        <textarea style="width: 800px; height: 600px; display: block; margin-bottom: 10px; background-color: #eaf1f7; color: black" type="text" name="text" placeholder="Content..."></textarea>
+        <input class="button_submit" type="submit"  name="submit" value="Submit">
     </form>
     {% if messages %}
         {% for message in messages %}
