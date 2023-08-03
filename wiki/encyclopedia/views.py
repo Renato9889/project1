@@ -8,8 +8,9 @@ import random
 from . import util
 
 def index(request):
+    ordem_list = sorted(util.list_entries())
     return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries()
+        "entries": ordem_list
     })
 
 
@@ -65,8 +66,7 @@ def create_newpage(request):
         if result == True:
             error = "Error, invalid title!"
             return render(request, 'encyclopedia/create_newpage.html', {'error_input': error})
-    
-    
+  
     return render(request,'encyclopedia/create_newpage.html')
 
 
@@ -75,16 +75,15 @@ def search_random(request):
     return redirect('search', title = title)
 
 def edit_page(request):
-   if request.method == 'GET':
+   if 'save' in request.POST:
         title = request.POST.get('title',"")
         text = request.POST.get('text',"")
-        messages.success(request, 'New page successfully created!')
         util.save_entry(title,text)
         return redirect('search', title=title)
    else:
-        title = request.GET.get('title', '')
-        result_search = util.get_entry(title)
-        return render(request, 'encyclopedia/edit_page.html', {
+       title = request.POST.get('title', '')
+       result_search = util.get_entry(title)
+       return render(request, 'encyclopedia/edit_page.html', {
                         "title_editvalue": title,
                         "text_editvalue": result_search,
-                        })
+                        }) 
