@@ -2,9 +2,9 @@
 
 <p align="justify"> This git repository contains an encyclopedia project developed in 
   Django for Harvard University's python and javascript web programming course. 
-  This project is an online encyclopedia similar to Wikipedia, 
-  where the user is able to search pages and create pages, in addition to being 
-  able to use several other features, such as displaying random pages and editing.</p>
+  This project is an online encyclopedia similar to Wikipedia, where the user is able to 
+  search pages and create pages, in addition to being able to use several other features, 
+  such as displaying random pages, viewing all available pages and editing pages.</p>
   <img src="https://github.com/Renato9889/project1/assets/38532053/9a9dffff-db35-4312-a627-93a002ef7136">
   <img src="https://github.com/Renato9889/project1/assets/38532053/4e79f284-6afc-4a52-9b21-32ced54d5f4a">
   <img src="https://github.com/Renato9889/project1/assets/38532053/b936a13b-049b-4c61-b020-5e611983269d">
