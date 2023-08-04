@@ -14,6 +14,6 @@
     ],
     "env": {
       "DJANGO_SECRET_KEY": "%710m*zic)#0u((qugw#1@e^ty!c)9j04956v@ly(_86n$rg)h",
-      "DJANGO_SETTINGS_MODULE": "/project1/wiki/wiki/settings.py"
+      "DJANGO_SETTINGS_MODULE": "project1.settings"
     }
   }
