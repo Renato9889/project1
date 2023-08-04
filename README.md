@@ -1,13 +1,15 @@
 <h1 align="center">Harvard University CS50 Wiki Project - Renato's Project (Encyclopedia) </h1>
 
-<p align="justify">Project for an online encyclopedia similar to Wikipedia. Developed in Django, 
-  this project is an encyclopedia where the user is able to search for pages and create pages, 
-  in addition to several other features such as displaying random pages and editing.</p>
+<p align="justify"> This git repository contains an encyclopedia project developed in 
+  Django for Harvard University's python and javascript web programming course.</p> 
+<p align="justify">This project is an online encyclopedia similar to Wikipedia, 
+  where the user is able to search pages and create pages, in addition to being 
+  able to use several other features, such as displaying random pages and editing.</p>
   <img src="https://github.com/Renato9889/project1/assets/38532053/9a9dffff-db35-4312-a627-93a002ef7136">
   <img src="https://github.com/Renato9889/project1/assets/38532053/4e79f284-6afc-4a52-9b21-32ced54d5f4a">
   <img src="https://github.com/Renato9889/project1/assets/38532053/b936a13b-049b-4c61-b020-5e611983269d">
 
-<h2>Specification</h2>!
+<h2>Specification</h2>
 <ul>
   <li>Home - listing the names of all pages.</li>
   <li> Click - the user can click on any entry name to be taken directtly to that entry page.</li>
