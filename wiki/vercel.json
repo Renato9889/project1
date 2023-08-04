@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "/project1/wiki/(.*)",
+        "src": "/project1/wiki/menage.py",
         "use": "@vercel/python"
       }
     ],
