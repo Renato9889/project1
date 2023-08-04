@@ -9,11 +9,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "wiki/menage.py"
+        "dest": "wiki/wsgi.py"
       }
-    ],
-    "env": {
-      "DJANGO_SECRET_KEY": "%710m*zic)#0u((qugw#1@e^ty!c)9j04956v@ly(_86n$rg)h",
-      "DJANGO_SETTINGS_MODULE": "wiki.settings"
-    }
+    ]
 }
