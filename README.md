@@ -4,7 +4,7 @@
   this project is an encyclopedia where the user is able to search for pages and create pages, 
   in addition to several other features such as displaying random pages and editing.</p>
 <h2>Specification</h2>
-<ol>
+<ul>
   <li>Home - listing the names of all pages.</li>
   <li> Click - the user can click on any entry name to be taken directtly to that entry page.</li>
   <li>Navigation - clicking on any of the entry names on the results page takes the user to that entry's page.</li>
@@ -19,7 +19,7 @@
   <li>Error creating new page - one of the entries is empty.</li>
   <li>Edit - on each entry page the user is able to click on a link to be taken to a page where the user can edit the Markdown content of that entry in a file.</li>
   <li>Random Page - clicking on “Random Page” in the sidebar takes the user to a random encyclopedia entry.</li>
-</ol>
+</ul>
 
 ## ✔️ Techniques and technologies used
 - ``Python3``
