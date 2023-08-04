@@ -1,10 +1,9 @@
 from django.shortcuts import render,redirect
 from django.utils.safestring import mark_safe
 from django.contrib import messages
-from django.urls import reverse
+import time
 import markdown
 import random
-
 from . import util
 
 def index(request):
@@ -72,10 +71,8 @@ def create_newpage(request):
     result = title in list_title
     if request.method == 'POST' and text != "" and result == False and title != "":
         title = title[0].upper() + title[1:]
-        messages.success(request, 'New page successfully created!')
-        return render(request, 'encyclopedia/create_newpage.html', {
-            'create_newpage': util.save_entry(title,text)
-        })
+        util.save_entry(title,text)
+        return redirect('search', title=title)
     else:
         if result == True:
             error = "Error, invalid title!"
