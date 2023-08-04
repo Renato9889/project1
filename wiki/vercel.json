@@ -1,15 +1,15 @@
 {
-    "version": 2,
     "builds": [
       {
-        "src": "/project1/wiki",
-        "use": "@vercel/python"
+        "src": "wiki/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime":"python3.9"}
       }
     ],
     "routes": [
       {
-        "src": "/project1/wiki/(.*)",
-        "dest": "/project1/wiki/menage.py"
+        "src": "/(.*)",
+        "dest": "wiki/menage.py"
       }
     ],
     "env": {
