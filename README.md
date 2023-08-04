@@ -1,4 +1,4 @@
-<h1 align="center"> Renato's Project 1 (Encyclopedia) - Web Programming with Python and JavaScript</h1>
+<h1 align="center">Harvard University CS50 Wiki Project - Renato's Project (Encyclopedia) </h1>
 
 <p align="justify">Project for an online encyclopedia similar to Wikipedia. Developed in Django, 
   this project is an encyclopedia where the user is able to search for pages and create pages, 
