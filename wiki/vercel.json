@@ -2,11 +2,11 @@
     "version": 2,
     "builds": [
       {
-        "src": "project1/wiki",
+        "src": "/project1/wiki",
         "use": "@vercel/python"
       }
     ],
     "routes": [
-      { "src": "project1/wiki", "dest": "path/project1/wiki/manage.py" }
+      { "src": "/project1/wiki", "dest": "path/project1/wiki/manage.py" }
     ]
   }
