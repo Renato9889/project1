@@ -1,8 +1,8 @@
 <h1 align="center">Harvard University CS50 Wiki Project - Renato's Project (Encyclopedia) </h1>
 
 <p align="justify"> This git repository contains an encyclopedia project developed in 
-  Django for Harvard University's python and javascript web programming course.</p> 
-<p align="justify">This project is an online encyclopedia similar to Wikipedia, 
+  Django for Harvard University's python and javascript web programming course. 
+  This project is an online encyclopedia similar to Wikipedia, 
   where the user is able to search pages and create pages, in addition to being 
   able to use several other features, such as displaying random pages and editing.</p>
   <img src="https://github.com/Renato9889/project1/assets/38532053/9a9dffff-db35-4312-a627-93a002ef7136">
