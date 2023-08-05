@@ -1,15 +1,15 @@
 {
     "builds": [
       {
-        "src": "wiki/wsgi.py",
+        "src": "/project1/wiki",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime":"python3.9"}
       }
     ],
     "routes": [
       {
-        "src": "/wiki",
-        "dest": "wiki/wsgi.py"
+        "src": "/.*",
+        "dest": "/project1/wiki/wsgi.py"
       }
     ]
 }
