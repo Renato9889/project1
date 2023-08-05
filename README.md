@@ -10,6 +10,7 @@
   <img src="https://github.com/Renato9889/project1/assets/38532053/b936a13b-049b-4c61-b020-5e611983269d">
 
 <h2>Specification</h2>
+<a href="https://youtu.be/mbwFpwo3gHU">Click here to view the project execution video</a>
 <ul>
   <li>Home - listing the names of all pages.</li>
   <li> Click - the user can click on any entry name to be taken directtly to that entry page.</li>
