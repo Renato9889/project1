@@ -5,6 +5,7 @@ import markdown
 import random
 from . import util
 
+
 def index(request):
     ordem_list = sorted(util.list_entries())
     return render(request, "encyclopedia/index.html", {
