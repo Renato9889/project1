@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect
 from django.utils.safestring import mark_safe
 from django.contrib import messages
-import time
 import markdown
 import random
 from . import util
+from wiki.encyclopedia import util
 
 def index(request):
     ordem_list = sorted(util.list_entries())
